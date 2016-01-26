@@ -23,6 +23,12 @@ $ Rscript source("run_analysis.R")
 From RStudio console
 ```R
 > out <- source("run_analysis.R")
+> out
+$value
+[1] TRUE
+
+$visible
+[1] TRUE
 ````
 The scripts returns TRUE on success, NA on failure
 
