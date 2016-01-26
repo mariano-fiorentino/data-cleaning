@@ -3,7 +3,7 @@
 Description
 -----------
 
-Creates a clean dataset from files of UCI HAR Dataset. The script checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download the required dataset.
+This script creates a clean dataset from files of UCI HAR Dataset. The script checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download the required files.
 The scripts does the following steps:
 
 * Merges the training and the test sets to create one data set.
@@ -15,10 +15,16 @@ The scripts does the following steps:
 Usage
 -----------
 
+From unix shell:
 ```R
-Rscript source("run_analysis.R")
+$ Rscript source("run_analysis.R")
 ````
 
+From RStudio console
+```R
+> out <- source("run_analysis.R")
+````
+The scripts returns TRUE on success, NA on failure
 
 Authors
 ------------
