@@ -27,8 +27,14 @@ From RStudio console
 The scripts returns TRUE on success, NA on failure
 
 Dependencies
-------------
+-----------
+The script has been tested with the follows installed packages packages 
 *  "dplyr":  	0.4.3
+
+In case of error yon can install dplyr from RStudio console:
+```R
+> install.packages("dplyr")
+````
 
 Authors
 ------------
