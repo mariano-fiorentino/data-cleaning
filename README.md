@@ -26,6 +26,10 @@ From RStudio console
 ````
 The scripts returns TRUE on success, NA on failure
 
+Dependencies
+------------
+*  "dplyr":  	0.4.3
+
 Authors
 ------------
 
