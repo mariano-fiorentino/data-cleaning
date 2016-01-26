@@ -2,8 +2,14 @@
 
 Description
 -----------
+This script creates a clean dataset from files of UCI HAR Dataset. The data source of the original dataset is downloadble at:
 
-This script creates a clean dataset from files of UCI HAR Dataset. The script checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download the required files.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+About the original dataset, a full description is available at the site where the data was obtained:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 The scripts does the following steps:
 
 * Merges the training and the test sets to create one data set.
@@ -14,6 +20,7 @@ The scripts does the following steps:
 
 Usage
 -----------
+The script checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download the required files.
 
 From unix shell:
 ```R
