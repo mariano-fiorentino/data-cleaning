@@ -1,6 +1,8 @@
 ## Creates a clean dataset from files of UCI HAR Dataset
 ##
 ## @author Fiorentino
+##
+## @param directory character with the path of the "UCI HAR Dataset"
 ## @return a list with $value = TRUE on success, NA on failure
 ##
 ## @examples
@@ -28,6 +30,7 @@ tidy_ucihar <- function ()
     result <- tryCatch({
         # loads the required libraries
         library(dplyr)
+        library(data.table)
         # download the file
         directory = checkdata();
         # reads test and train datasets and binds the rows
@@ -39,8 +42,8 @@ tidy_ucihar <- function ()
         tbl %>% select(grep('-(mean|std)\\(\\)', names_df[,2], perl = TRUE)) -> tbl
         # cleans names with some regexpr and adds column names to the dataset
         names <- names_df[grepl('-(mean|std)\\(\\)', names_df[,2], perl = TRUE),2]
-        patterns <- c("^t(.*)",   "^f(.*)",        "\\(\\)", "-",   "(.*)")
-        repl     <- c("time.\\1", "frequency.\\1", "",       ".",   "\\L\\1")
+        patterns <- c("^t(.*)",   "^f(.*)",        "\\(\\)", "-",   "(.*)",   "(bodybody)")
+        repl     <- c("time.\\1", "frequency.\\1", "",       ".",   "\\L\\1", "body")
         for (idx in seq_along(patterns)) names = gsub(patterns[idx], repl[idx], names, perl = TRUE)
         names(tbl) <- names
         # reads "activity" column from train & test files
