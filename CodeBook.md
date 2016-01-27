@@ -55,43 +55,43 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+- mean(): Mean value
+- std(): Standard deviation
+- mad(): Median absolute deviation 
+- max(): Largest value in array
+- min(): Smallest value in array
+- sma(): Signal magnitude area
+- energy(): Energy measure. Sum of the squares divided by the number of values. 
+- iqr(): Interquartile range 
+- entropy(): Signal entropy
+- arCoeff(): Autorregresion coefficients with Burg order equal to 4
+- correlation(): correlation coefficient between two signals
+- maxInds(): index of the frequency component with largest magnitude
+- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+- skewness(): skewness of the frequency domain signal 
+- kurtosis(): kurtosis of the frequency domain signal 
+- bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+- angle(): Angle between to vectors.
 
 
 Work performed on variables
@@ -100,23 +100,23 @@ The original features names was modified in the script to fit the variable stand
 This transformation has been necessary to improve readability of the variables, to assign descriptive column name to the dataset and to avoid camel case variable name.  
 The follows schema is the map of the changes that the script makes on the signals name:
 
-tBodyAcc                ->  time.bodyacc
-tGravityAcc             ->  time.gravityacc
-tBodyAccJerk            ->  time.bodyaccjerk
-tBodyGyro               ->  time.bodygyro
-tBodyGyroJerk           ->  time.bodygyrojerk
-tBodyAccMag             ->  time.bodyaccmag
-tGravityAccMag          ->  time.gravityaccmag
-tBodyAccJerkMag         ->  time.bodyaccjerkmag
-tBodyGyroMag            ->  time.bodygyromag
-tBodyGyroJerkMag        ->  time.bodygyrojerkmag
-fBodyAcc                ->  frequency.bodyacc
-fBodyAccJerk            ->  frequency.bodyaccjerk
-fBodyGyro               ->  frequency.bodygyro
-fBodyAccMag             ->  frequency.bodyaccmag
-fBodyAccJerkMag         ->  frequency.bodyaccjerkmag
-fBodyBodyGyroMag        ->  frequency.bodygyromag
-fBodyBodyGyroJerkMag    ->  frequency.bodygyrojerkmag
+* tBodyAcc                ->  time.bodyacc
+* tGravityAcc             ->  time.gravityacc
+* tBodyAccJerk            ->  time.bodyaccjerk
+* tBodyGyro               ->  time.bodygyro
+* tBodyGyroJerk           ->  time.bodygyrojerk
+* tBodyAccMag             ->  time.bodyaccmag
+* tGravityAccMag          ->  time.gravityaccmag
+* tBodyAccJerkMag         ->  time.bodyaccjerkmag
+* tBodyGyroMag            ->  time.bodygyromag
+* tBodyGyroJerkMag        ->  time.bodygyrojerkmag
+* fBodyAcc                ->  frequency.bodyacc
+* fBodyAccJerk            ->  frequency.bodyaccjerk
+* fBodyGyro               ->  frequency.bodygyro
+* fBodyAccMag             ->  frequency.bodyaccmag
+* fBodyAccJerkMag         ->  frequency.bodyaccjerkmag
+* fBodyBodyGyroMag        ->  frequency.bodygyromag
+* fBodyBodyGyroJerkMag    ->  frequency.bodygyrojerkmag
 
 The set of variables that were kept from the original dataset are only the mean and standard deviation for each measurement; the script searches for the follows patterns to match that requirement:
 
@@ -132,6 +132,6 @@ Furthermore, to the original dataset has been added two addictional column:
 
 Notes
 -----------
-- Features are normalized and bounded within [-1,1].
+Features are normalized and bounded within [-1,1].
 
 
