@@ -12,6 +12,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 The scripts does the following steps:
 
+* Checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download and unzips the required files
 * Merges the training and the test sets to create one data set.
 * Extracts only the measurements on the mean and standard deviation for each measurement.
 * Uses descriptive activity names to name the activities in the data set
