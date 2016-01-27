@@ -1,25 +1,17 @@
-# run_analysis.R
+# Getting and Cleaning Data Course Project
 
 Description
 -----------
-This script creates a clean dataset from files of UCI HAR Dataset. The data source of the original dataset is downloadble at:
+The purpose of this project is to create a script - run_analysis.R - that prepare a tidy data that can be used for later analysis. 
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+This git repo includes the following files
 
-About the original dataset, a full description is available at the site where the data was obtained:
+- 'README.md'      : this file
+- 'run_analysis.R' : The script that generate the required dataset
+- 'CodeBook.md'    : Contains information about the variables, the data, and any transformations or work that i performed to clean up the data
 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The scripts does the following steps:
-
-* Checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download and unzips the required files
-* Merges the training and the test sets to create one data set.
-* Extracts only the measurements on the mean and standard deviation for each measurement.
-* Uses descriptive activity names to name the activities in the data set
-* Appropriately labels the data set with descriptive variable names.
-* From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-Usage
+How to run the script
 -----------
 The script checks if exists the "UCI HAR Dataset" directory, otherwise it will try to download the required files.
 
@@ -38,16 +30,19 @@ $value
 $visible
 [1] TRUE
 ````
-The scripts returns TRUE on success, NA on failure
+TRUE on success, NA on failure.
+Running the R script included in this project will generate a new dataset- "tidy_ucihar.txt" - in your working dir.
 
 Dependencies
 -----------
 The script has been tested with the follows installed packages packages 
-*  "dplyr":  	0.4.3
+* "dplyr":     0.4.3
+* "data.table"
 
 In case of error yon can install dplyr from RStudio console:
 ```R
 > install.packages("dplyr")
+> install.packages("data.table")
 ````
 
 Authors
