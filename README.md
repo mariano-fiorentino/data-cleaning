@@ -36,8 +36,8 @@ Running the R script included in this project will generate a new dataset- "tidy
 Dependencies
 -----------
 The script has been tested with the follows installed packages packages 
-* "dplyr":     0.4.3
-* "data.table"
+* "dplyr":      0.4.3
+* "data.table": 1.9.6
 
 In case of error yon can install dplyr from RStudio console:
 ```R
