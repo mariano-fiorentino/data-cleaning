@@ -42,8 +42,10 @@ tidy_ucihar <- function ()
         tbl %>% select(grep('-(mean|std)\\(\\)', names_df[,2], perl = TRUE)) -> tbl
         # cleans names with some regexpr and adds column names to the dataset
         names <- names_df[grepl('-(mean|std)\\(\\)', names_df[,2], perl = TRUE),2]
-        patterns <- c("^t(.*)",   "^f(.*)",        "\\(\\)", "-",   "(.*)",   "(bodybody)")
-        repl     <- c("time.\\1", "frequency.\\1", "",       ".",   "\\L\\1", "body")
+        patterns <- c("^t(.*)", "^f(.*)", "\\(\\)", "-", "(BodyBody|Body)","(Acc)", 
+                      "(Gravity)","(Gyro)","(Jerk)", "(Mag)", "(\\.\\.)",    "(.*)")
+        repl     <- c("time.\\1", "frequency.\\1", "", ".", "Body.", "Accelerometer.",
+                      "Gravity.", "Gyroscope.", "Jerk.",  "magnitude.", ".",  "\\L\\1")
         for (idx in seq_along(patterns)) names = gsub(patterns[idx], repl[idx], names, perl = TRUE)
         names(tbl) <- names
         # reads "activity" column from train & test files
