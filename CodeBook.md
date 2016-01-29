@@ -1,5 +1,6 @@
 # Getting and Cleaning Data Course Project CodeBook
 
+
 About the data source
 -----------
 The script uses as data source the "Human Activity Recognition Using Smartphones Dataset". The original experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, has been captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.
@@ -38,11 +39,10 @@ To clean up the data you have to run_analysis.R, the script does the following j
 - read "subject" column for train & test        
 - joins the main table with the activity and subject datasets
 - reads activities labels and assigns it to the table 
-- groups by subject & activity and summarise_each
-- write tidy_ucihar.txt in the working directory
+- creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+- writes tidy_ucihar.txt in the working directory
 
-The script will generate a new tidy dataset - "tidy_ucihar.txt" - in your working dir.
-
+The script will generate a new dataset - "tidy_ucihar.txt", a data.frame with 180 observation of  68 variables - in your working dir.
 
 Variables on the original dataset
 -----------
@@ -55,83 +55,141 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-- tBodyAcc-XYZ
-- tGravityAcc-XYZ
-- tBodyAccJerk-XYZ
-- tBodyGyro-XYZ
-- tBodyGyroJerk-XYZ
-- tBodyAccMag
-- tGravityAccMag
-- tBodyAccJerkMag
-- tBodyGyroMag
-- tBodyGyroJerkMag
-- fBodyAcc-XYZ
-- fBodyAccJerk-XYZ
-- fBodyGyro-XYZ
-- fBodyAccMag
-- fBodyAccJerkMag
-- fBodyGyroMag
-- fBodyGyroJerkMag
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
-- mean(): Mean value
-- std(): Standard deviation
-- mad(): Median absolute deviation 
-- max(): Largest value in array
-- min(): Smallest value in array
-- sma(): Signal magnitude area
-- energy(): Energy measure. Sum of the squares divided by the number of values. 
-- iqr(): Interquartile range 
-- entropy(): Signal entropy
-- arCoeff(): Autorregresion coefficients with Burg order equal to 4
-- correlation(): correlation coefficient between two signals
-- maxInds(): index of the frequency component with largest magnitude
-- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-- skewness(): skewness of the frequency domain signal 
-- kurtosis(): kurtosis of the frequency domain signal 
-- bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-- angle(): Angle between to vectors.
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
 
 
 Work performed on variables
 -----------
-The original features names was modified in the script to fit the variable standard in R. In R a syntactically valid name consists of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number.
-This transformation has been necessary to improve readability of the variables, to assign descriptive column name to the dataset and to avoid camel case variable name.  
-The follows schema is the map of the changes that the script makes on the signals name:
 
-* tBodyAcc                ->  time.bodyacc
-* tGravityAcc             ->  time.gravityacc
-* tBodyAccJerk            ->  time.bodyaccjerk
-* tBodyGyro               ->  time.bodygyro
-* tBodyGyroJerk           ->  time.bodygyrojerk
-* tBodyAccMag             ->  time.bodyaccmag
-* tGravityAccMag          ->  time.gravityaccmag
-* tBodyAccJerkMag         ->  time.bodyaccjerkmag
-* tBodyGyroMag            ->  time.bodygyromag
-* tBodyGyroJerkMag        ->  time.bodygyrojerkmag
-* fBodyAcc                ->  frequency.bodyacc
-* fBodyAccJerk            ->  frequency.bodyaccjerk
-* fBodyGyro               ->  frequency.bodygyro
-* fBodyAccMag             ->  frequency.bodyaccmag
-* fBodyAccJerkMag         ->  frequency.bodyaccjerkmag
-* fBodyBodyGyroMag        ->  frequency.bodygyromag
-* fBodyBodyGyroJerkMag    ->  frequency.bodygyrojerkmag
+The original features names was modified in the script to fit the variable standard in R. In R, a syntactically valid name, consists of letters, numbers and the dot or underline characters, and starts with a letter or the dot not followed by a number.
+This transformation has been necessary to improve readability of the variables and to assign descriptive column name to the dataset.  
+The follows is the map of the changes that the script makes on the signals name:
 
-The set of variables that were kept from the original dataset are only the mean and standard deviation for each measurement; the script searches for the follows patterns to match that requirement:
+tBodyAcc                ->  time.body.accelerometer
+tGravityAcc             ->  time.gravity.accelerometer
+tBodyAccJerk            ->  time.body.accelerometer.jerk
+tBodyGyro               ->  time.body.gyroscope
+tBodyGyroJerk           ->  time.body.gyroscope.jerk
+tBodyAccMag             ->  time.body.accelerometer.magnitude
+tGravityAccMag          ->  time.gravity.accelerometer.magnitude
+tBodyAccJerkMag         ->  time.body.accelerometer.jerk.magnitude
+tBodyGyroMag            ->  time.body.gyroscope.magnitude
+tBodyGyroJerkMag        ->  time.body.gyroscope.jerk.magnitude
+fBodyAcc                ->  frequency.body.accelerometer
+fBodyAccJerk            ->  frequency.body.accelerometer.jerk
+fBodyGyro               ->  frequency.body.gyroscope
+fBodyAccMag             ->  frequency.body.accelerometer.magnitude
+fBodyAccJerkMag         ->  frequency.body.accelerometer.jerk.magnitude
+fBodyGyroMag            ->  frequency.body.gyroscope.magnitude
+fBodyGyroJerkMag        ->  frequency.body.gyroscope.jerk.magnitude
 
-* -mean()
-* -std()
+The set of variables that were kept from the original dataset are only the mean and standard deviation for each measurement.
 
-A regular expression has been used to modify the resulting 66 variables to removing parethesis and substituing "-" in "." 
-Furthermore, to the original dataset has been added two addictional column: 
- 
-- subject               ->  Subject identifier code
-- activity              ->  Description of the activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-
-
-Notes
+List of variables
 -----------
-Features are normalized and bounded within [-1,1].
+All of variables, excuding "subject" and "activity", are normalized and bounded within [-1,1]
 
-
+ $ subject                                         : int  1:30, subject id
+ $ activity                                        : Factor w/ 6 levels "LAYING","SITTING",
+ $ time.body.accelerometer.mean.x                  : num 
+ $ time.body.accelerometer.mean.y                  : num 
+ $ time.body.accelerometer.mean.z                  : num  
+ $ time.body.accelerometer.std.x                   : num  
+ $ time.body.accelerometer.std.y                   : num  
+ $ time.body.accelerometer.std.z                   : num  
+ $ time.gravity.accelerometer.mean.x               : num  
+ $ time.gravity.accelerometer.mean.y               : num  
+ $ time.gravity.accelerometer.mean.z               : num  
+ $ time.gravity.accelerometer.std.x                : num  
+ $ time.gravity.accelerometer.std.y                : num  
+ $ time.gravity.accelerometer.std.z                : num  
+ $ time.body.accelerometer.jerk.mean.x             : num  
+ $ time.body.accelerometer.jerk.mean.y             : num  
+ $ time.body.accelerometer.jerk.mean.z             : num  
+ $ time.body.accelerometer.jerk.std.x              : num  
+ $ time.body.accelerometer.jerk.std.y              : num  
+ $ time.body.accelerometer.jerk.std.z              : num  
+ $ time.body.gyroscope.mean.x                      : num  
+ $ time.body.gyroscope.mean.y                      : num  
+ $ time.body.gyroscope.mean.z                      : num  
+ $ time.body.gyroscope.std.x                       : num  
+ $ time.body.gyroscope.std.y                       : num  
+ $ time.body.gyroscope.std.z                       : num  
+ $ time.body.gyroscope.jerk.mean.x                 : num  
+ $ time.body.gyroscope.jerk.mean.y                 : num  
+ $ time.body.gyroscope.jerk.mean.z                 : num  
+ $ time.body.gyroscope.jerk.std.x                  : num  
+ $ time.body.gyroscope.jerk.std.y                  : num  
+ $ time.body.gyroscope.jerk.std.z                  : num  
+ $ time.body.accelerometer.magnitude.mean          : num  
+ $ time.body.accelerometer.magnitude.std           : num  
+ $ time.gravity.accelerometer.magnitude.mean       : num  
+ $ time.gravity.accelerometer.magnitude.std        : num  
+ $ time.body.accelerometer.jerk.magnitude.mean     : num  
+ $ time.body.accelerometer.jerk.magnitude.std      : num  
+ $ time.body.gyroscope.magnitude.mean              : num  
+ $ time.body.gyroscope.magnitude.std               : num  
+ $ time.body.gyroscope.jerk.magnitude.mean         : num  
+ $ time.body.gyroscope.jerk.magnitude.std          : num  
+ $ frequency.body.accelerometer.mean.x             : num 
+ $ frequency.body.accelerometer.mean.y             : num 
+ $ frequency.body.accelerometer.mean.z             : num 
+ $ frequency.body.accelerometer.std.x              : num 
+ $ frequency.body.accelerometer.std.y              : num 
+ $ frequency.body.accelerometer.std.z              : num  
+ $ frequency.body.accelerometer.jerk.mean.x        : num  
+ $ frequency.body.accelerometer.jerk.mean.y        : num  
+ $ frequency.body.accelerometer.jerk.mean.z        : num  
+ $ frequency.body.accelerometer.jerk.std.x         : num  
+ $ frequency.body.accelerometer.jerk.std.y         : num  
+ $ frequency.body.accelerometer.jerk.std.z         : num  
+ $ frequency.body.gyroscope.mean.x                 : num  
+ $ frequency.body.gyroscope.mean.y                 : num  
+ $ frequency.body.gyroscope.mean.z                 : num  
+ $ frequency.body.gyroscope.std.x                  : num  
+ $ frequency.body.gyroscope.std.y                  : num  
+ $ frequency.body.gyroscope.std.z                  : num  
+ $ frequency.body.accelerometer.magnitude.mean     : num  
+ $ frequency.body.accelerometer.magnitude.std      : num  
+ $ frequency.body.accelerometer.jerk.magnitude.mean: num  
+ $ frequency.body.accelerometer.jerk.magnitude.std : num  
+ $ frequency.body.gyroscope.magnitude.mean         : num  
+ $ frequency.body.gyroscope.magnitude.std          : num  
+ $ frequency.body.gyroscope.jerk.magnitude.mean    : num  
+ $ frequency.body.gyroscope.jerk.magnitude.std     : num  
