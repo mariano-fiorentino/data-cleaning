@@ -124,71 +124,71 @@ List of variables
 -----------
 All of variables, excuding "subject" and "activity", are normalized and bounded within [-1,1]
 
- $ subject                                         : int  1:30, subject id
- $ activity                                        : Factor w/ 6 levels WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
- $ time.body.accelerometer.mean.x                  : num 
- $ time.body.accelerometer.mean.y                  : num 
- $ time.body.accelerometer.mean.z                  : num  
- $ time.body.accelerometer.std.x                   : num  
- $ time.body.accelerometer.std.y                   : num  
- $ time.body.accelerometer.std.z                   : num  
- $ time.gravity.accelerometer.mean.x               : num  
- $ time.gravity.accelerometer.mean.y               : num  
- $ time.gravity.accelerometer.mean.z               : num  
- $ time.gravity.accelerometer.std.x                : num  
- $ time.gravity.accelerometer.std.y                : num  
- $ time.gravity.accelerometer.std.z                : num  
- $ time.body.accelerometer.jerk.mean.x             : num  
- $ time.body.accelerometer.jerk.mean.y             : num  
- $ time.body.accelerometer.jerk.mean.z             : num  
- $ time.body.accelerometer.jerk.std.x              : num  
- $ time.body.accelerometer.jerk.std.y              : num  
- $ time.body.accelerometer.jerk.std.z              : num  
- $ time.body.gyroscope.mean.x                      : num  
- $ time.body.gyroscope.mean.y                      : num  
- $ time.body.gyroscope.mean.z                      : num  
- $ time.body.gyroscope.std.x                       : num  
- $ time.body.gyroscope.std.y                       : num  
- $ time.body.gyroscope.std.z                       : num  
- $ time.body.gyroscope.jerk.mean.x                 : num  
- $ time.body.gyroscope.jerk.mean.y                 : num  
- $ time.body.gyroscope.jerk.mean.z                 : num  
- $ time.body.gyroscope.jerk.std.x                  : num  
- $ time.body.gyroscope.jerk.std.y                  : num  
- $ time.body.gyroscope.jerk.std.z                  : num  
- $ time.body.accelerometer.magnitude.mean          : num  
- $ time.body.accelerometer.magnitude.std           : num  
- $ time.gravity.accelerometer.magnitude.mean       : num  
- $ time.gravity.accelerometer.magnitude.std        : num  
- $ time.body.accelerometer.jerk.magnitude.mean     : num  
- $ time.body.accelerometer.jerk.magnitude.std      : num  
- $ time.body.gyroscope.magnitude.mean              : num  
- $ time.body.gyroscope.magnitude.std               : num  
- $ time.body.gyroscope.jerk.magnitude.mean         : num  
- $ time.body.gyroscope.jerk.magnitude.std          : num  
- $ frequency.body.accelerometer.mean.x             : num 
- $ frequency.body.accelerometer.mean.y             : num 
- $ frequency.body.accelerometer.mean.z             : num 
- $ frequency.body.accelerometer.std.x              : num 
- $ frequency.body.accelerometer.std.y              : num 
- $ frequency.body.accelerometer.std.z              : num  
- $ frequency.body.accelerometer.jerk.mean.x        : num  
- $ frequency.body.accelerometer.jerk.mean.y        : num  
- $ frequency.body.accelerometer.jerk.mean.z        : num  
- $ frequency.body.accelerometer.jerk.std.x         : num  
- $ frequency.body.accelerometer.jerk.std.y         : num  
- $ frequency.body.accelerometer.jerk.std.z         : num  
- $ frequency.body.gyroscope.mean.x                 : num  
- $ frequency.body.gyroscope.mean.y                 : num  
- $ frequency.body.gyroscope.mean.z                 : num  
- $ frequency.body.gyroscope.std.x                  : num  
- $ frequency.body.gyroscope.std.y                  : num  
- $ frequency.body.gyroscope.std.z                  : num  
- $ frequency.body.accelerometer.magnitude.mean     : num  
- $ frequency.body.accelerometer.magnitude.std      : num  
- $ frequency.body.accelerometer.jerk.magnitude.mean: num  
- $ frequency.body.accelerometer.jerk.magnitude.std : num  
- $ frequency.body.gyroscope.magnitude.mean         : num  
- $ frequency.body.gyroscope.magnitude.std          : num  
- $ frequency.body.gyroscope.jerk.magnitude.mean    : num  
- $ frequency.body.gyroscope.jerk.magnitude.std     : num  
+- subject                                         : int  1:30, subject id
+- activity                                        : Factor w/ 6 levels WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+- time.body.accelerometer.mean.x                  : num 
+- time.body.accelerometer.mean.y                  : num 
+- time.body.accelerometer.mean.z                  : num  
+- time.body.accelerometer.std.x                   : num  
+- time.body.accelerometer.std.y                   : num  
+- time.body.accelerometer.std.z                   : num  
+- time.gravity.accelerometer.mean.x               : num  
+- time.gravity.accelerometer.mean.y               : num  
+- time.gravity.accelerometer.mean.z               : num  
+- time.gravity.accelerometer.std.x                : num  
+- time.gravity.accelerometer.std.y                : num  
+- time.gravity.accelerometer.std.z                : num  
+- time.body.accelerometer.jerk.mean.x             : num  
+- time.body.accelerometer.jerk.mean.y             : num  
+- time.body.accelerometer.jerk.mean.z             : num  
+- time.body.accelerometer.jerk.std.x              : num  
+- time.body.accelerometer.jerk.std.y              : num  
+- time.body.accelerometer.jerk.std.z              : num  
+- time.body.gyroscope.mean.x                      : num  
+- time.body.gyroscope.mean.y                      : num  
+- time.body.gyroscope.mean.z                      : num  
+- time.body.gyroscope.std.x                       : num  
+- time.body.gyroscope.std.y                       : num  
+- time.body.gyroscope.std.z                       : num  
+- time.body.gyroscope.jerk.mean.x                 : num  
+- time.body.gyroscope.jerk.mean.y                 : num  
+- time.body.gyroscope.jerk.mean.z                 : num  
+- time.body.gyroscope.jerk.std.x                  : num  
+- time.body.gyroscope.jerk.std.y                  : num  
+- time.body.gyroscope.jerk.std.z                  : num  
+- time.body.accelerometer.magnitude.mean          : num  
+- time.body.accelerometer.magnitude.std           : num  
+- time.gravity.accelerometer.magnitude.mean       : num  
+- time.gravity.accelerometer.magnitude.std        : num  
+- time.body.accelerometer.jerk.magnitude.mean     : num  
+- time.body.accelerometer.jerk.magnitude.std      : num  
+- time.body.gyroscope.magnitude.mean              : num  
+- time.body.gyroscope.magnitude.std               : num  
+- time.body.gyroscope.jerk.magnitude.mean         : num  
+- time.body.gyroscope.jerk.magnitude.std          : num  
+- frequency.body.accelerometer.mean.x             : num 
+- frequency.body.accelerometer.mean.y             : num 
+- frequency.body.accelerometer.mean.z             : num 
+- frequency.body.accelerometer.std.x              : num 
+- frequency.body.accelerometer.std.y              : num 
+- frequency.body.accelerometer.std.z              : num  
+- frequency.body.accelerometer.jerk.mean.x        : num  
+- frequency.body.accelerometer.jerk.mean.y        : num  
+- frequency.body.accelerometer.jerk.mean.z        : num  
+- frequency.body.accelerometer.jerk.std.x         : num  
+- frequency.body.accelerometer.jerk.std.y         : num  
+- frequency.body.accelerometer.jerk.std.z         : num  
+- frequency.body.gyroscope.mean.x                 : num  
+- frequency.body.gyroscope.mean.y                 : num  
+- frequency.body.gyroscope.mean.z                 : num  
+- frequency.body.gyroscope.std.x                  : num  
+- frequency.body.gyroscope.std.y                  : num  
+- frequency.body.gyroscope.std.z                  : num  
+- frequency.body.accelerometer.magnitude.mean     : num  
+- frequency.body.accelerometer.magnitude.std      : num  
+- frequency.body.accelerometer.jerk.magnitude.mean: num  
+- frequency.body.accelerometer.jerk.magnitude.std : num  
+- frequency.body.gyroscope.magnitude.mean         : num  
+- frequency.body.gyroscope.magnitude.std          : num  
+- frequency.body.gyroscope.jerk.magnitude.mean    : num  
+- frequency.body.gyroscope.jerk.magnitude.std     : num  
