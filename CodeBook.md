@@ -125,7 +125,7 @@ List of variables
 All of variables, excuding "subject" and "activity", are normalized and bounded within [-1,1]
 
  $ subject                                         : int  1:30, subject id
- $ activity                                        : Factor w/ 6 levels "LAYING","SITTING",
+ $ activity                                        : Factor w/ 6 levels WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
  $ time.body.accelerometer.mean.x                  : num 
  $ time.body.accelerometer.mean.y                  : num 
  $ time.body.accelerometer.mean.z                  : num  
